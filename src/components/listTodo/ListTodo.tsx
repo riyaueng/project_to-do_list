@@ -67,13 +67,16 @@ export default function ListTodo({ todos, toggleStatus, deleteTodo, updateTodo }
                 </div>
 
                 <div className="flex row gap-3">
-                  <button
-                    onClick={() => {
-                      setEditIndex(index)
-                      setEditText(todo.text)
-                    }}>
-                    <p className="text-2xl">✏️</p>
-                  </button>
+                  {todo.status !== "erledigt" && (
+                    <button
+                      onClick={() => {
+                        setEditIndex(index)
+                        setEditText(todo.text)
+                      }}
+                      className="text-2xl">
+                      ✏️
+                    </button>
+                  )}
 
                   <button onClick={() => deleteTodo(index)}>
                     <p className="text-2xl">🗑️</p>
