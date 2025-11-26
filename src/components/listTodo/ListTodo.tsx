@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import type { Todo } from "../../types/todo"
 
 type ListTodoProps = {
@@ -11,13 +11,19 @@ type ListTodoProps = {
 export default function ListTodo({ todos, toggleStatus, deleteTodo, updateTodo }: ListTodoProps) {
   const [editIndex, setEditIndex] = useState<number | null>(null)
   const [editText, setEditText] = useState<string>("")
+  const [now, setNow] = useState(() => Date.now())
 
   const handleSave = (index: number) => {
     updateTodo(index, editText)
     setEditIndex(null)
   }
 
-  const isOverdue = (todo: Todo) => todo.status === "offen" && Date.now() - new Date(todo.createdAt).getTime() > 60000
+  useEffect(() => {
+    const interval = setInterval(() => setNow(Date.now()), 1000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const isOverdue = (todo: Todo) => todo.status === "offen" && now - new Date(todo.createdAt).getTime() > 60000
 
   return (
     <ul>
