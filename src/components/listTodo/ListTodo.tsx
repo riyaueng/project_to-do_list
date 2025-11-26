@@ -48,16 +48,16 @@ export default function ListTodo({ todos, toggleStatus, deleteTodo, updateTodo }
                     type="checkbox"
                     checked={todo.status === "erledigt"}
                     onChange={() => toggleStatus(index)}
-                    className="mt-1.5 w-5 h-5 "
+                    className="mt-1.5 w-5 h-5"
                   />
-                  <div className={todo.status === "erledigt" ? "text-2xl line-through" : ""}>
+                  <div className={todo.status === "erledigt" ? "text-lg line-through" : ""}>
                     <p
                       className={`${
                         todo.status === "erledigt"
                           ? "line-through"
                           : isOverdue(todo)
-                          ? "text-red-500 font-bold text-2xl"
-                          : "text-2xl"
+                          ? "text-red-500 font-bold text-lg"
+                          : "text-lg"
                       }`}>
                       {todo.text}
                       {isOverdue(todo) && "!"}

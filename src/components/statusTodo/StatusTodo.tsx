@@ -9,7 +9,7 @@ export default function StatusTodo({ todos }: StatusTodoProps) {
   const erledigt = todos.filter((todo) => todo.status === "erledigt").length
 
   return (
-    <section className="ml-10 mt-4">
+    <section className="ml-2 mt-4">
       <p>Offene Aufgaben: {offen}</p>
       <p>Erledigte Aufgaben: {erledigt}</p>
     </section>

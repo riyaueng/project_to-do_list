@@ -30,7 +30,10 @@ export default function Home() {
     <>
       <section className="mb-6">
         <h1>Todo-Liste</h1>
-        <p className="text-lg">Willkommen! Was möchtest du heute erledigen?</p>
+        <p className="text-lg">
+          Willkommen!
+          <br /> Was möchtest du heute erledigen?
+        </p>
       </section>
       <AddTodo inputTodo={inputTodo} setInputTodo={setInputTodo} addTodo={addTodo} />
       <ListTodo todos={todos} toggleStatus={toggleStatus} deleteTodo={deleteTodo} updateTodo={updateTodo} />
