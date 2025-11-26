@@ -1,13 +1,21 @@
-# To-Do List Webapp
+# ☑️ To-Do List Webapp
+
+## 📋 Über das Projekt
 
 Eine einfache To-Do-Liste als React-App mit TypeScript und TailwindCSS.
 
 ## Features
-- Aufgaben hinzufügen, bearbeiten, löschen
-- Aufgaben als erledigt markieren
-- Statusanzeige: offen/erledigt
-- Überfällige Aufgaben werden rot und mit Ausrufezeichen angezeigt
-- Erstellungsdatum jeder Aufgabe
+- ✅ Aufgaben hinzufügen, bearbeiten, löschen
+- ✅ Aufgaben als erledigt markieren
+- ✅ Statusanzeige: offen/erledigt
+- ✅ Überfällige Aufgaben werden rot und mit Ausrufezeichen angezeigt
+- ✅ Erstellungsdatum jeder Aufgabe
+
+## 🛠️ Technologien
+- React
+- TypeScript
+- TailwindCSS
+- Vite
 
 ## Installation
 
@@ -26,13 +34,7 @@ Eine einfache To-Do-Liste als React-App mit TypeScript und TailwindCSS.
 4. Entwicklung starten:
    ```sh
    npm run dev
-   ```
-
-## Technologien
-- React
-- TypeScript
-- TailwindCSS
-- Vite
+   ```✅
 
 ## Ordnerstruktur
 ```
@@ -48,6 +50,10 @@ project_to-do_list/
 ├── README.md
 └── ...
 ```
+## 🧩 Noch ausstehende Features
 
-## Lizenz
-MIT
+- [ ] Responsive Design (Tablet, Mobil)
+- [ ] UI und Styling
+- [ ] Unterteilung der Aufgaben in Kategorien
+- [ ] Aufgaben können in andere Kategorie verschoben werden
+
