@@ -26,42 +26,60 @@ export default function ListTodo({ todos, toggleStatus, deleteTodo, updateTodo }
   const isOverdue = (todo: Todo) => todo.status === "offen" && now - new Date(todo.createdAt).getTime() > 60000
 
   return (
-    <ul>
+    <ul className="ml-2 mr-2">
       {todos.map((todo, index) => (
         <li key={index}>
-          <div className="flex items-center justify-between border-b py-2 border-gray-300">
+          <div className="flex border-b py-2 border-gray-300  ">
             {editIndex === index ? (
-              <>
+              <div>
                 <input
                   value={editText}
                   onChange={(e) => setEditText(e.target.value)}
-                  className="border rounded px-2 py-1"
+                  className="border rounded px-3 py-2 mb-1"
                 />
-                <button onClick={() => handleSave(index)}>☑️</button>
-              </>
+                <button onClick={() => handleSave(index)} className="m-2 text-2xl">
+                  ☑️
+                </button>
+              </div>
             ) : (
-              <>
-                <input type="checkbox" checked={todo.status === "erledigt"} onChange={() => toggleStatus(index)} />
-                <div className={todo.status === "erledigt" ? "line-through" : ""}>
-                  <p
-                    className={`${
-                      todo.status === "erledigt" ? "line-through" : isOverdue(todo) ? "text-red-500 font-bold" : ""
-                    }`}>
-                    {todo.text} {isOverdue(todo) && "❗️"}
-                  </p>
-                  <p>{todo.createdAt && todo.createdAt.toLocaleString()}</p>
+              <div className="flex w-full justify-between items-center">
+                <div className="flex gap-4 items-start">
+                  <input
+                    type="checkbox"
+                    checked={todo.status === "erledigt"}
+                    onChange={() => toggleStatus(index)}
+                    className="mt-1.5 w-5 h-5 "
+                  />
+                  <div className={todo.status === "erledigt" ? "text-2xl line-through" : ""}>
+                    <p
+                      className={`${
+                        todo.status === "erledigt"
+                          ? "line-through"
+                          : isOverdue(todo)
+                          ? "text-red-500 font-bold text-2xl"
+                          : "text-2xl"
+                      }`}>
+                      {todo.text}
+                      {isOverdue(todo) && "!"}
+                    </p>
+                    <p className="text-gray-400 text-sm">{todo.createdAt && todo.createdAt.toLocaleString()}</p>
+                  </div>
                 </div>
-                <div>
+
+                <div className="flex row gap-3">
                   <button
                     onClick={() => {
                       setEditIndex(index)
                       setEditText(todo.text)
                     }}>
-                    ✏️
+                    <p className="text-2xl">✏️</p>
                   </button>
-                  <button onClick={() => deleteTodo(index)}>🗑️</button>
+
+                  <button onClick={() => deleteTodo(index)}>
+                    <p className="text-2xl">🗑️</p>
+                  </button>
                 </div>
-              </>
+              </div>
             )}
           </div>
         </li>

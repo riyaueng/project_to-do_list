@@ -28,9 +28,9 @@ export default function AddTodo({ inputTodo, setInputTodo, addTodo }: AddTodoPro
         value={inputTodo}
         onChange={handleInputChange}
         placeholder="Erstelle eine neue Aufgabe"
-        className="border-gray-300 border rounded-l px-4 py-2"
+        className="border-gray-300 border rounded-tl-full rounded-bl-full px-4 py-2 w-full"
       />
-      <button className="text-white bg-[#646cff] px-4 py-2 rounded-r" onClick={handleButtonClick}>
+      <button className="text-white bg-[#646cff] px-4 py-2 rounded-tr-full rounded-br-full" onClick={handleButtonClick}>
         Erstellen
       </button>
     </section>
